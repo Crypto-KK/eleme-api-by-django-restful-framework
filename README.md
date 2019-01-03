@@ -2,7 +2,8 @@
 
 ## 效果图
 
-![Image text](https://github.com/PythonerKK/eleme-api-by-django-restful-framework/blob/master/image.png)
+![Image text](https://github.com/PythonerKK/eleme-api-by-django-restful-framework/blob/master/images1.png)
+![Image text](https://github.com/PythonerKK/eleme-api-by-django-restful-framework/blob/master/images2.png)
 
 # 安装方法 Windows
 
