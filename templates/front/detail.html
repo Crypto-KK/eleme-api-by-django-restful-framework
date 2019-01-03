@@ -1,0 +1,100 @@
+{% extends 'front/index.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <br>
+    <h1>详情</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="card text-center">
+                  <div class="card-header">
+                    商家卡片
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title" style="color: blue">{{ information.0 }} ({{ information.1 }})</h4>
+                    <h5 class="card-title" style="color: blue">附近高校：{{ information.2 }}</h5>
+                      <br>
+                    <p class="card-text">到{{ information.2 }}的距离：{{ information.4 }}米</p>
+                    <p class="card-text">详细地址：{{ information.3 }}</p>
+                    <p class="card-text">营业时间：{{ information.5 }}</p>
+                    <p class="card-text">联系方式：{{ information.6 }}</p>
+                    <p class="card-text">评分：{{ information.7 }}</p>
+                    <p class="card-text">评论个数：{{ information.8 }}</p>
+                    <p class="card-text">最近销售：{{ information.9 }}</p>
+                    <button class="btn btn-primary" id="editbtn">编辑/修改</button>
+                  </div>
+                  <div class="card-footer text-muted">
+                    信息更新日期：15天前
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-5">
+                <div class="card text-center" id="editbox">
+                  <div class="card-header">
+                    修改信息
+                  </div>
+                  <div class="card-body">
+
+                        <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">商家</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.0 }}" id="name">
+                        </div>
+
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">距离</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.4 }}" id="distance">
+                        </div>
+
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">地址</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.3 }}" id="address">
+                        </div>
+
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">营业</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.6 }}" id="time">
+                        </div>
+
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">评分</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.7 }}" id="score">
+                        </div>
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">评论</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.8 }}" id="comments">
+                        </div>
+                      <div class="input-group input-group-sm mb-3">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">销量</span>
+                          </div>
+                          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="{{ information.9 }}" id="sell">
+                        </div>
+                    <button class="btn btn-primary" id="edit-confirm-btn">确认修改</button>
+                  </div>
+                    <input type="hidden" id="pk" value="{{ information.10 }}">
+                  <div class="card-footer text-muted">
+                    此处使用http patch方法,以超级用户的身份登录才能修改
+                  </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

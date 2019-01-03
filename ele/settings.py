@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'api.apps.ApiConfig',
+    'front.apps.FrontConfig',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ele',
         'USER': 'postgres',
-        'PASSWORD': '998219',
+        'PASSWORD': 'xxxxxx',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -125,6 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 REST_FRAMEWORK = {
     #'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.LimitOffsetPagination',

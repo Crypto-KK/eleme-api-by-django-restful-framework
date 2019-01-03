@@ -16,9 +16,7 @@ class Entry(models.Model):
     sell = models.CharField(max_length=20,null=True,default='0')
     image = models.CharField(max_length=200,null=True,default='null')
     owner = models.ForeignKey('auth.User',related_name='entries',on_delete=models.CASCADE)
-
     # class Meta:
     #     ordering = ('name',)
-
     def __str__(self):
         return self.name

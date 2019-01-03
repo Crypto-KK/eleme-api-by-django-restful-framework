@@ -15,7 +15,7 @@ class EntryList(generics.ListCreateAPIView):
     serializer_class = EntrySerializer
     name = 'entry-list'
     filter_fields = ('city','school','name')
-    search_fields = ('^school',)
+    search_fields = ('school','city')
     ordering_fields = ('city')
 
     permission_classes = (

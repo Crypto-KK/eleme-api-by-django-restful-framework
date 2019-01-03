@@ -1,0 +1,73 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>饿了么</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/js-cookie/latest/js.cookie.min.js"></script>
+    <script src="{% static 'js/myjs.js' %}"></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">饿了么api接口调用</a>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+
+          <form class="form-inline" method="post">
+          {% csrf_token %}
+              {% if request.user.is_authenticated %}
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="logoutbtn">一键注销</button>
+
+              {% else %}
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="loginbtn">一键登录</button>
+              {% endif %}
+         </form>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                {% block content %}
+
+                {% endblock %}
+            </div>
+
+{#            <div class="col-sm-4">#}
+{#                <br><br>#}
+{#                <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">#}
+{#                  <div class="card-header">Header</div>#}
+{#                  <div class="card-body">#}
+{#                    <h5 class="card-title">Primary card title</h5>#}
+{#                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+{#                  </div>#}
+{#                </div>#}
+{#                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">#}
+{#                  <div class="card-header">Header</div>#}
+{#                  <div class="card-body">#}
+{#                    <h5 class="card-title">Secondary card title</h5>#}
+{#                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+{#                  </div>#}
+{#                </div>#}
+{#            </div>#}
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>

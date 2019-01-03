@@ -1,0 +1,25 @@
+{% extends 'front/index.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <br>
+    <h1>饿了么列表</h1>
+    <div align="center">
+        <form class="form-inline my-2 my-lg-0">
+                {% csrf_token %}
+              <input class="form-control mr-sm-2" type="search" placeholder="搜索" aria-label="Search" id="search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="searchbtn">搜索</button>
+        </form>
+    </div>
+
+    <br>
+
+    <div id="ele-list">
+        {% include 'front/ele_list.html' %}
+    </div>
+
+    <div align="center">
+        <button type="button" class="btn btn-info"  id="load-more" style="width: 200px;">加载更多</button>
+    </div>
+
+{% endblock %}
